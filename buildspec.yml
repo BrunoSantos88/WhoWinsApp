@@ -1,11 +1,18 @@
-version: 0.2
-
+version: 0.1
 phases:
   build:
     commands:
-      - chmod +x ./gradlew
-      - ./gradlew assembleDebug
+    - |-
+        apt-get update
+        apt-get -y install wget
+        apt-get -y install default-jdk
+        wget https://github.com/zaproxy/zaproxy/releases/download/v2.11.1/ZAP_2.11.1_Linux.tar.gz
+        mkdir zap
+        tar -xvf ZAP_2.11.1_Linux.tar.gz
+        cd ZAP_2.11.1
+        ./zap.sh -cmd -quickurl https://www.example.com -quickprogress -quickout ../zap_report.html 
 artifacts:
   files:
-     - './android/app/build/outputs/**/*.apk'
+    - zap_report.html
+    - './android/app/build/outputs/**/*.apk'
   discard-paths: yes
