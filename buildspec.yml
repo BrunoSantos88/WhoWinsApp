@@ -1,9 +1,12 @@
 version: 0.2
+
 phases:
   build:
     commands:
-      - $ANDROID_HOME/tools/bin/sdkmanager "build-tools;27.0.3" "platforms;android-27"
-      - sh gradlew assembleDebug
+      - cd android
+      - ./gradlew clean assembleDevDebug testDevDebugUnitTest
+      - ./gradlew crashlyticsUploadDistributionDevDebug
+
 artifacts:
   files:
-    - app/build/outputs/apk/debug/app-debug.apk
+    - android_studio/RueLaLa/app/build/outputs/apk/dev/debug/app-dev-debug.apk
