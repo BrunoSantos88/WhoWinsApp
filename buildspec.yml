@@ -1,9 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      apache: java
   pre_build:
     commands:
       - chmod +x ./gradlew
@@ -11,3 +8,4 @@ phases:
 artifacts:
   files:
      - './android/app/build/outputs/**/*.apk'
+  discard-paths: yes
