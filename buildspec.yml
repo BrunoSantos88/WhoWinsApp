@@ -25,9 +25,12 @@ phases:
       - pwd
   build:
     commands:
-      - echo Build started on `date`
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
   post_build:
     commands:
       - echo Build completed on `date`
+  artifacts:
+  files:
+     - './android/app/build/outputs/**/*.apk'
+  discard-paths: yes
