@@ -25,8 +25,5 @@ phases:
       - pwd
   build:
     commands:
-      - chmod +x ./gradlew
+      - chmod 755 ./gradlew
       - ./gradlew assembleRelease
-      - ./gradlew generatePomFileForAarPublication
-      - ./gradlew moveAAR
-      - ./gradlew movePOM
