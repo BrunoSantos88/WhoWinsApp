@@ -2,9 +2,9 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      android: latest
-      java: latest
-      nodejs: latest
+      android: 29
+      java: corretto11
+      nodejs: 16
     commands:
       - pwd
   pre_build:
