@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      android: 29
+      android: latest
       java: corretto11
       nodejs: 14
     commands:
