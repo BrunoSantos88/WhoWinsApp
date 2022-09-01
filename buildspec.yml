@@ -26,11 +26,10 @@ phases:
   build:
     commands:
       - chmod +x ./gradlew
-      - ./gradlew assembleDebug
-  post_build:
-    commands:
-      - echo Build completed on `date`
-  artifacts:
+      - ./gradlew assembleRelease
+      - ./gradlew generatePomFileForAarPublication
+      - ./gradlew moveAAR
+      - ./gradlew movePOM
+artifacts:
   files:
-     - './android/app/build/outputs/**/*.apk'
-  discard-paths: yes
+    - codebuildtestproject/**/*
