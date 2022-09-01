@@ -25,6 +25,7 @@ phases:
       - pwd
   build:
     commands:
-       - cd android && ./gradlew assembleRelease
+       - cd android && chmod +x 
+       - ./gradlew./gradlew assembleRelease
 
 
