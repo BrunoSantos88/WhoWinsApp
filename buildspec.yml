@@ -30,6 +30,3 @@ phases:
       - ./gradlew generatePomFileForAarPublication
       - ./gradlew moveAAR
       - ./gradlew movePOM
-artifacts:
-  files:
-    - codebuildtestproject/**/*
