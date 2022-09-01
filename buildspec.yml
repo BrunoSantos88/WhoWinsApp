@@ -18,14 +18,13 @@ phases:
       - sdkmanager "build-tools;31.0.0" > /dev/null
   pre_build:
     commands:
-      - echo Pre Build started on `date`
       - npm --version
       - npm install
       - cd android
       - pwd
   build:
     commands:
-       - cd android && chmod +x 
-       - ./gradlew./gradlew assembleRelease
+       - chmod +x ./gradlew
+      - ./gradlew assembleDebug
 
 
