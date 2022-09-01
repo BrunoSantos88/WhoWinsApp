@@ -26,12 +26,11 @@ phases:
   build:
     commands:
        - chmod +x ./gradlew
-       - ./gradlew bootJar
+       - ./gradlew-wrapper.jar
   post_build:
     commands:
       - echo $(basename ./build/libs/*.jar)
       - pwd
-
 cache:
   paths:
     - '/root/.gradle/caches/**/*'
