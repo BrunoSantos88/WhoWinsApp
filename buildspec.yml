@@ -5,8 +5,6 @@ phases:
       java: corretto11
       nodejs: 14
     commands:
-      - java -version
-      - gradle -version
       - pwd
       - export ANDROID_TOOLS_FILENAME="commandlinetools-linux-8512546_latest.zip"
       - wget https://dl.google.com/android/repository/$ANDROID_TOOLS_FILENAME -P ~ > /dev/null
@@ -18,12 +16,24 @@ phases:
       - yes | sdkmanager --licenses > /dev/null
       - sdkmanager "platform-tools" "platforms;android-31" > /dev/null
       - sdkmanager "build-tools;31.0.0" > /dev/null
+  pre_build:
+    commands:
+      - java --version
+      - gradle --version
+      - npm --version
+      - npm install
+      - cd android
   build:
     commands:
-     - echo Build Starting on `date`
-     - chmod +x ./gradlew
-     - ./gradlew build
+       - chmod +x ./gradlew
+       - ./gradlew build
   post_build:
     commands:
       - echo $(basename ./build/libs/*.jar)
       - pwd
+
+cache:
+  paths:
+    - '/root/.gradle/caches/**/*'
+
+
