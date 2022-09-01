@@ -26,8 +26,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - ./gradlew clean
       - chmod +x ./gradlew
+      - ./gradlew clean
       - ./gradlew assembleDebug
   post_build:
     commands:
