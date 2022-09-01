@@ -27,7 +27,6 @@ phases:
   build:
     commands:
        - chmod +x ./gradlew
-       - ./gradlew clean
-       - ./gradlew release
+       - ./gradlew assembleDebug
 
 
