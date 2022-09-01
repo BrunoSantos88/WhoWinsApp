@@ -5,6 +5,8 @@ phases:
       java: corretto11
       nodejs: 14
     commands:
+      - java -version
+      - gradle -version
       - pwd
       - export ANDROID_TOOLS_FILENAME="commandlinetools-linux-8512546_latest.zip"
       - wget https://dl.google.com/android/repository/$ANDROID_TOOLS_FILENAME -P ~ > /dev/null
@@ -25,6 +27,7 @@ phases:
   build:
     commands:
        - chmod +x ./gradlew
-      - ./gradlew assembleDebug
+       - ./gradlew clean build
+       - ./gradlew release
 
 
