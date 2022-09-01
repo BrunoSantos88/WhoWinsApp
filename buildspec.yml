@@ -18,15 +18,15 @@ phases:
       - yes | sdkmanager --licenses > /dev/null
       - sdkmanager "platform-tools" "platforms;android-31" > /dev/null
       - sdkmanager "build-tools;31.0.0" > /dev/null
-  pre_build:
-    commands:
-      - npm --version
-      - npm install
-      - cd android
-      - pwd
   build:
     commands:
-       - chmod +x ./gradlew
-       - ./gradlew assembleDebug
-
-
+     - echo Build Starting on `date`
+     - chmod +x ./gradlew
+     - ./gradlew build
+  post_build:
+    commands:
+      - echo $(basename ./build/libs/*.jar)
+      - pwd
+  cache:
+    paths:
+    - '/root/.gradle/caches/**/*'
