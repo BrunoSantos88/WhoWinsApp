@@ -25,14 +25,12 @@ phases:
       - cd android
   build:
     commands:
-       - chmod +x ./gradlew
-       - ./gradlew-wrapper.jar
-  post_build:
-    commands:
-      - echo $(basename ./build/libs/*.jar)
-      - pwd
-cache:
-  paths:
-    - '/root/.gradle/caches/**/*'
+       - chmod +x gradlew
+       - ./gradlew assembleRelease
+artifacts:
+  files:
+     - './android/app/build/outputs/**/*.apk'
+  discard-paths: yes       
+  
 
 
