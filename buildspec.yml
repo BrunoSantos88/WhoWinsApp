@@ -22,14 +22,12 @@ phases:
       - gradle --version
       - npm --version
       - cd android
+      - npm install
   build:
     commands:
        - chmod +x gradlew
        - ./gradlew assembleRelease
-artifacts:
-  files:
-     - './android/app/build/outputs/**/*.apk'
-  discard-paths: yes       
+    
   
 
 
