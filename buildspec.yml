@@ -19,7 +19,7 @@ phases:
   pre_build:
     commands:
       - node --version
-      - npm install
+      - npm install --force
       - cd android
   build:
     commands:
