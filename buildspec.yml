@@ -3,7 +3,7 @@ phases:
   install:
     runtime-versions:
       java: corretto17
-      nodejs: 14
+      nodejs: 16
     commands:
       - pwd
       - export ANDROID_TOOLS_FILENAME="commandlinetools-linux-8512546_latest.zip"
