@@ -19,11 +19,11 @@ phases:
   pre_build:
     commands:
       - java --version
-      - gradle --version
       - npm --version
       - cd android
   build:
     commands:
+       - npm install
        - chmod +x gradlew
        - ./gradlew assembleRelease
     
