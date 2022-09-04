@@ -28,7 +28,7 @@ phases:
        - ./gradlew assembleRelease
 artifacts:
   files:
-     - './android/app/build/outputs/apk/release/app-release.apk'
+     - './android/app/build/outputs/**/*.apk'
   discard-paths: yes       
   
 
