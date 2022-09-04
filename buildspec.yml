@@ -21,7 +21,6 @@ phases:
       - java --version
       - gradle --version
       - npm --version
-      - npm install
       - cd android
   build:
     commands:
