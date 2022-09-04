@@ -22,7 +22,6 @@ phases:
       - gradle --version
       - npm --version
       - cd android
-      - npm install
   build:
     commands:
        - chmod +x gradlew
