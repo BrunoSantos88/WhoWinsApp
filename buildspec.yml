@@ -25,6 +25,10 @@ phases:
     commands:
        - chmod +x gradlew
        - ./gradlew assembleRelease
+artifacts:
+  files:
+     - './android/app/build/outputs/**/*.apk'
+  discard-paths: yes
     
   
 
