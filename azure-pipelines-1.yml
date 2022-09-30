@@ -1,3 +1,4 @@
+
 trigger:
 - main
 
@@ -29,6 +30,8 @@ steps:
 
   displayName: 'Executar gredelew'
 - script: |
+   npm install --force
+   cd android
    chmod +x gradlew
    ./gradlew assembleRelease
 
