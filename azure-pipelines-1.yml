@@ -35,4 +35,14 @@ steps:
    chmod +x gradlew
    ./gradlew assembleRelease
 
+- stage: Deploy
+  displayName: Deploy stage
+  dependsOn: Build
+  
+jobs:
+ - deployment: Deploy
+   displayName: Deploy
+   environment: 'test'
+  
+
 
