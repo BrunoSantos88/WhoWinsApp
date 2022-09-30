@@ -24,22 +24,11 @@ steps:
     sdkmanager "platform-tools" "platforms;android-31" > /dev/null
     sdkmanager "build-tools;31.0.0" > /dev/null
 
-  displayName: 'pre build'
-
-- script: |
-   node --version
-   npm install --force
-   cd android
-
-  displayName: 'build'
-
 - script: |
    chmod +x gradlew
    ./gradlew assembleRelease
 
-
-
-  
-
-
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: './android/app/build/outputs/**/*.apk'
 
