@@ -45,4 +45,10 @@ jobs:
    environment: 'test'
   
 
-
+- task: AzureFileCopy@5
+  inputs:
+    SourcePath: '/android/app'
+    azureSubscription: 'Azure for Students(843b7e3c-478b-4336-aae6-f59aae26f24b)'
+    Destination: 'AzureBlob'
+    storage: 'guilhermeteste001'
+    ContainerName: 'app'
