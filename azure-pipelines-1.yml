@@ -9,7 +9,10 @@ steps:
   inputs:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
+- script: node --version
+- script: java --version
   
+  displayName: 'install andorid'
 - script: |
     npm install
     pwd
@@ -24,6 +27,7 @@ steps:
     sdkmanager "platform-tools" "platforms;android-31" > /dev/null
     sdkmanager "build-tools;31.0.0" > /dev/null
 
+  displayName: 'Executar gredelew'
 - script: |
    chmod +x gradlew
    ./gradlew assembleRelease
