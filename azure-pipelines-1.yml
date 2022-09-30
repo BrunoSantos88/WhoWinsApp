@@ -28,7 +28,4 @@ steps:
    chmod +x gradlew
    ./gradlew assembleRelease
 
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: './android/app/build/outputs/**/*.apk'
 
